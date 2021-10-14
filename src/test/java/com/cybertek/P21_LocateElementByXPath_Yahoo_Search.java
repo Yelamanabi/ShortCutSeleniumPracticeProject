@@ -16,16 +16,38 @@ public class P21_LocateElementByXPath_Yahoo_Search {
         driver.get("https://search.yahoo.com");
 
         //use xpath to identify search box and enter "xpath"
-
-
-
+/**
+ *
+ * //input[@name='p']
+ * //input[@id='yschsp']
+ *
+ */
         WebElement searchBox = driver.findElement(By.xpath("//input[@name='p' ]"));
         searchBox.sendKeys("xpath");
         //click on x icon to clear out the text
-       driver.findElement()
 
+               /**
+                * //button//span[@class='sprite']
+                * //button//span[@class='sprite']
+                * //button[@id='sbq-clear']//span[@class='sprite']
+                *
+                */
+
+               driver.findElement(By.xpath("//button[@id='sbq-clear']//span[@class='sprite']")).click();
         //enter "selenium locators" into search box
+        searchBox.sendKeys("selenium locators");
 
         //identify search icon and click on it
+        /**
+         * //span[@title='Search']
+         *
+         *
+         */
+        driver.findElement(By.xpath("//span[@title='Search']")).click();
+
+
+
+        //close
+        driver.quit();
     }
 }
